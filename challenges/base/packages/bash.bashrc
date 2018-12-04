@@ -112,3 +112,42 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Make the challenge interactive.
+#
+# challengeStatusShort() returns a one-line string giving a short
+# explanation of the challenge status.
+# If the return code is 0, then the prompt is green.
+# Else, the prompt is red.
+function challengeStatusShort() {
+#	echo challenge
+	return 0
+}
+
+#
+# __challengeStatusPS1() prints the challenge status using
+# challengeStatusShort().
+function __challengeStatusPS1() {
+  # return code from assignment
+  # see https://stackoverflow.com/a/42965336
+  # color codes in bash
+  # see https://stackoverflow.com/a/5947802/1320237
+  local line
+  local returnCode
+	line="$(eval challengeStatusShort)"
+	returnCode="$?"
+	if [ "$returnCode" == "0" ]; then
+		echo -ne "$1" # green
+	else
+		echo -ne "$2" # red
+	fi
+	echo -ne $line $USER "$3" # no color
+}
+# 
+# Using a command in side a bash prompt
+# see https://stackoverflow.com/a/24716445
+# Having \ escapes with different meanings
+# see https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html
+export PS1='$( __challengeStatusPS1 "\[\e[1;32m\]" "\[\e[1;31m\]" "\[\e[0m\]" )\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+
+
