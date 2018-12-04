@@ -27,6 +27,7 @@ RUN cat /etc/profile1 >> /etc/profile && rm /etc/profile1
 # Infect the computer.
 #
 COPY infected.bashrc .bashrc
+COPY infected.bashrc /home/ada/.bashrc
 COPY infected.file /etc/init.d/r4ven
 
 
