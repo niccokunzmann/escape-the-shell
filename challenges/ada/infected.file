@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Attention: This file is vital to the system. Any removal of this file
+#            Will probably result in a crash of the computer.
+#            Modifications are strongly discouraged as they may lead to
+#            Random loss of files.
+#
+
+export owner="r4aven"
+# TODO: Put some source code here.
+

@@ -1,0 +1,18 @@
+
+#
+# This file greets the user and gives instructions.
+#
+
+echo "Hello dear friend. Thanks for joining forces with our team to clean up" \
+     "the mess after those crackers broke into our system." \
+     "Our team is working on the damage as well and will lend you a hand in" \
+     "need."
+echo "Your first challenge has already begun."
+echo "The hacker has infiltrated the system you are on." \
+     "Do not trust that this computer is friendly." \
+     "We think that the attacker is mocking us and left the name of the" \
+     "collective as we found other files with the word \"r4""ven\" in them." \
+     "We suggest you look around this computer and rid it of the infected"\
+     "files."
+echo "Good Luck!"
+

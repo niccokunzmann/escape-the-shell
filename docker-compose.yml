@@ -1,0 +1,12 @@
+#
+# Dockerfile to launch the project at once.
+# See https://docs.docker.com/compose/compose-file/ for reference.
+#
+
+version: "2"
+services:
+  ada:
+    image: escapetheshell/ada
+
+
+
