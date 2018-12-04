@@ -1,4 +1,4 @@
-
+#!/bin/bash
 #
 # This file greets the user and gives instructions.
 #
@@ -16,3 +16,35 @@ echo "The hacker has infiltrated the system you are on." \
      "files."
 echo "Good Luck!"
 
+#
+# Replace the user feedback of the challenge status.
+#
+function challengeStatusShort() {
+	local filesInfected
+	local filesFound
+	local max
+	filesInfected=0
+	max="?"
+	if grep -q 'r''4ven' ~/.bashrc 2>>/dev/null; then
+		filesInfected="$(( filesInfected + 1 ))"
+	fi
+	if grep -q 'r''4ven' /etc/init.d/r""4ven 2>>/dev/null; then
+		filesInfected="$(( filesInfected + 1 ))"
+	fi
+	if ls -la /root 2>>/dev/null | grep -q .bashrc; then
+		filesInfected="$(( filesInfected + 1 ))"
+	fi
+	filesFound="$(( 3 - filesInfected ))"
+	if [ "$filesFound" -ge 2 ]; then
+	  max="3"
+	fi
+	echo -n "challenge $filesFound/$max"
+	if [ "$filesInfected" == "0" ]; then
+	  echo " type nextChallenge"
+	fi
+	return "$filesInfected"
+}
+
+function nextChallenge() {
+	echo "TODO: instructions for the next challenge"
+}
