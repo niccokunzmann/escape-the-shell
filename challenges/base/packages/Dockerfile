@@ -3,7 +3,7 @@ FROM ubuntu
 # Install packages in Docker and clean the container
 # from https://hub.docker.com/r/guilhem/apt-get-install/
 RUN apt-get update && \
-    apt-get install -y nano vim openssh-server && \
+    apt-get install -y nano vim openssh-server less sudo && \
     apt-get autoremove && \
     apt-get clean
 
